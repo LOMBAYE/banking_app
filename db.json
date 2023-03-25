@@ -1,0 +1,13 @@
+{
+  "customers": [
+    { "id": 1, "name": "Mbaye", "bankAccount": 11115 },
+    { "id": 2, "name": "Moustapha", "bankAccount": 11116 },
+    { "id": 3, "name": "Khadija", "bankAccount": 11119 },
+    { "id": 4, "name": "Aissatou", "bankAccount": 11115 },
+    { "id": 5, "name": "Mouhamed", "bankAccount": 11112}
+  ],
+  "comments": [
+    { "id": 1, "body": "some comment", "postId": 1 }
+  ],
+  "profile": { "name": "typicode" }
+}
