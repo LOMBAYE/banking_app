@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+}
+.accueil {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 450px;
+    background-image: url('https://images.unsplash.com/photo-1584271369250-c2401da8d8e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fGJhbmtpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#titre {
+    display: flex;
+    margin-left: 10%;
+    font-size: 3rem;
+    color: white;
+    animation-name: glow;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    transition-timing-function: ease-in-out;
+}
+
+@keyframes glow {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+#titre2{
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    color: black;
+    animation-name: glow2;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    transition-timing-function: ease-in-out;
+}
+
+@keyframes glow2 {
+    from {
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    to {
+        opacity: 0.5;
+    }
+}
+
+#titre3{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 3rem;
+    color: white;
+    font-family: "Helvetica Neue";
+    animation-name: glow3;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    transition-timing-function: ease-in-out;
+}
+
+@keyframes glow3 {
+    from {
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
+    }
+}
+#main{
+    background-color: #F0F8FF;
+}

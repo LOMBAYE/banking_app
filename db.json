@@ -1,13 +1,113 @@
 {
   "customers": [
-    { "id": 1, "name": "Mbaye", "bankAccount": 11115 },
-    { "id": 2, "name": "Moustapha", "bankAccount": 11116 },
-    { "id": 3, "name": "Khadija", "bankAccount": 11119 },
-    { "id": 4, "name": "Aissatou", "bankAccount": 11115 },
-    { "id": 5, "name": "Mouhamed", "bankAccount": 11112}
+    {
+      "id": 1,
+      "firstname": "Mbaye",
+      "lastname": "Lo",
+      "phone": 777494045,
+      "accounts": [
+        {
+          "id": 1,
+          "accountNum": 235676,
+          "balance": 12500
+        },
+        {
+          "id": 2,
+          "accountNum": 235677,
+          "balance": 13500
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "firstname": "Moustapha",
+      "lastname": "Gaye",
+      "phone": 777494047
+    },
+    {
+      "id": 3,
+      "firstname": "Khadija",
+      "lastname": "Faye",
+      "phone": 777494049,
+      "accounts": [
+        {
+          "id": 5,
+          "accountNum": 235780,
+          "balance": 212500
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "firstname": "Aissatou",
+      "lastname": "Gningue",
+      "phone": 777494040
+    },
+    {
+      "id": 5,
+      "firstname": "Mouhamed",
+      "lastname": "Diop",
+      "phone": 777494041
+    }
+  ],
+  "accounts": [
+    {
+      "id": 1,
+      "accountNum": 235676,
+      "balance": 12500,
+      "customer": {
+        "id": 1,
+        "firstname": "Mbaye",
+        "lastname": "Lo",
+        "phone": 777494045
+      }
+    },
+    {
+      "id": 2,
+      "accountNum": 235677,
+      "balance": 13500,
+      "customer": {
+        "id": 1,
+        "firstname": "Mbaye",
+        "lastname": "Lo",
+        "phone": 777494045
+      }
+    },
+    {
+      "id": 3,
+      "accountNum": 235690,
+      "balance": 22500
+    },
+    {
+      "id": 4,
+      "accountNum": 235670,
+      "balance": 212500
+    },
+    {
+      "id": 5,
+      "accountNum": 235780,
+      "balance": 212500,
+      "customer": {
+        "id": 3,
+        "firstname": "Khadija",
+        "lastname": "Faye",
+        "phone": 777494049
+      }
+    },
+    {
+      "id": 6,
+      "accountNum": 239690,
+      "balance": 922500
+    }
   ],
   "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "name": "typicode"
+  }
 }
