@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import HelloWorld from "../components/HelloWorld";
 import axios from 'axios';
-import {Link, useParams} from "react-router-dom";
+import {Link, useNavigate, useParams} from "react-router-dom";
 import Shared from "../components/Shared";
+import TransactionModal from "../components/TransactionModal";
 
 // type CustomProps = {
 //     name: string;
@@ -32,6 +33,39 @@ function Details() {
         })
     }, [url])
 
+    //Deposit or withdraw
+    const [showModal, setShowModal] = useState(false);
+    const [transactionType, setTransactionType] = useState("");
+
+    const handleDeposit = () => {
+        setTransactionType("deposit");
+        setShowModal(true);
+    };
+
+    const handleWithdrawal = () => {
+        setTransactionType("withdraw");
+        setShowModal(true);
+    };
+
+    const handleCloseModal = () => {
+        setShowModal(false);
+        setTransactionType("");
+    };
+
+    const handleTransactionSubmit = (amount) => {
+        if (transactionType === "deposit") {
+            // handle deposit logic
+            alert("deposit")
+        } else if (transactionType === "withdraw") {
+            // handle withdrawal logic
+            alert("submitted")
+        }
+        handleCloseModal();
+    };
+//
+    const navigate = useNavigate()
+
+
     if (customer) {
         return (
             <>
@@ -55,9 +89,19 @@ function Details() {
                                 <td> {account.accountNum}</td>
                                 <td>{account.balance} FCFA</td>
                                 <td className="text-center">
-                                    <button type="button" className="btn btn-primary" >Withdraw</button>
-                                    <button type="button" className="btn btn-info m-2">Deposit</button>
+                                    <button type="button" className="btn btn-primary" onClick = {
+                                        () => navigate('/accounts/' + account.id)
+                                    } >Withdraw</button>
+                                    <button type="button" className="btn btn-info m-2" onClick = {
+                                        () => navigate('/accounts/' + account.id)
+                                    }>Deposit</button>
                                 </td>
+                                <TransactionModal
+                                    isOpen={showModal}
+                                    onClose={handleCloseModal}
+                                    type={transactionType}
+                                    onSubmit={handleTransactionSubmit}
+                                />
                             </tr>
                         )}
                         </tbody>

@@ -5,8 +5,8 @@ import Shared from "./Shared";
 
 function AddCustomer() {
     const [id, setId] = useState("");
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
+    const [firstname, setFirstname] = useState("");
+    const [lastname, setLastname] = useState("");
     const [phone, setPhone] = useState("");
 
     function handleIdChange(event) {
@@ -14,11 +14,11 @@ function AddCustomer() {
     }
 
     function handleFirstNameChange(event) {
-        setFirstName(event.target.value);
+        setFirstname(event.target.value);
     }
 
     function handleLastNameChange(event) {
-        setLastName(event.target.value);
+        setLastname(event.target.value);
     }
 
     function handlePhoneChange(event) {
@@ -27,23 +27,25 @@ function AddCustomer() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        const data = { id, firstName, lastName, phone };
+        const data = { id, firstname, lastname, phone };
+        console.log(data)
         customerService.addACustomer(data)
             .then((response) => {
                 if (response.ok) {
                     alert("Customer added successfully!");
                     setId("");
-                    setFirstName("");
-                    setLastName("");
+                    setFirstname("");
+                    setLastname("");
                     setPhone("");
                 } else {
-                    alert("Error adding customer!");
+                    alert("Error adding customerrrr!");
                 }
             })
             .catch((error) => {
                 alert("Error adding customer!");
                 console.error(error);
             });
+        navigate('/customers');
     }
 
     const navigate=useNavigate()
@@ -54,7 +56,7 @@ function AddCustomer() {
             <div className="form-group">
                 <label htmlFor="id">ID:</label>
                 <input
-                    type="text"
+                    type="number"
                     className="form-control"
                     id="id"
                     value={id}
@@ -63,23 +65,23 @@ function AddCustomer() {
                 />
             </div>
             <div className="form-group">
-                <label htmlFor="firstName">First Name:</label>
+                <label htmlFor="firstname">First Name:</label>
                 <input
                     type="text"
                     className="form-control"
-                    id="firstName"
-                    value={firstName}
+                    id="firstname"
+                    value={firstname}
                     onChange={handleFirstNameChange}
                     required
                 />
             </div>
             <div className="form-group">
-                <label htmlFor="lastName">Last Name:</label>
+                <label htmlFor="lastname">Last Name:</label>
                 <input
                     type="text"
                     className="form-control"
-                    id="lastName"
-                    value={lastName}
+                    id="lastname"
+                    value={lastname}
                     onChange={handleLastNameChange}
                     required
                 />

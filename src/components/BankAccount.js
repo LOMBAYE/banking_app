@@ -1,34 +1,47 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import TransactionModal from "./TransactionModal";
 
-function BankModal(props) {
-    const [amount, setAmount] = useState('');
+const BankAccount = () => {
+    const [showModal, setShowModal] = useState(false);
+    const [transactionType, setTransactionType] = useState("");
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (amount !== '') {
-            props.onSubmit(amount);
-            setAmount('');
+    const handleDeposit = () => {
+        setTransactionType("deposit");
+        setShowModal(true);
+    };
+
+    const handleWithdrawal = () => {
+        setTransactionType("withdraw");
+        setShowModal(true);
+    };
+
+    const handleCloseModal = () => {
+        setShowModal(false);
+        setTransactionType("");
+    };
+
+    const handleTransactionSubmit = (amount) => {
+        if (transactionType === "deposit") {
+            // handle deposit logic
+        } else if (transactionType === "withdraw") {
+            // handle withdrawal logic
         }
+        handleCloseModal();
     };
 
     return (
-        <div className="modal">
-            <div className="modal-content">
-                <h2>{props.title}</h2>
-                <form onSubmit={handleSubmit}>
-                    <label htmlFor="amount">Amount:</label>
-                    <input
-                        type="number"
-                        id="amount"
-                        value={amount}
-                        onChange={(e) => setAmount(e.target.value)}
-                    />
-                    <button type="submit">Submit</button>
-                    <button onClick={props.onClose}>Close</button>
-                </form>
-            </div>
+        <div>
+            <h1>Account Balance: $100</h1>
+            <button onClick={handleDeposit}>Deposit Funds</button>
+            <button onClick={handleWithdrawal}>Withdraw Funds</button>
+            <TransactionModal
+                isOpen={showModal}
+                onClose={handleCloseModal}
+                type={transactionType}
+                onSubmit={handleTransactionSubmit}
+            />
         </div>
     );
-}
+};
 
-export default BankModal;
+export default BankAccount;

@@ -4,7 +4,7 @@
       "id": 1,
       "firstname": "Mbaye",
       "lastname": "Lo",
-      "phone": 777494045,
+      "phone": "777494045",
       "accounts": [
         {
           "id": 1,
@@ -22,13 +22,13 @@
       "id": 2,
       "firstname": "Moustapha",
       "lastname": "Gaye",
-      "phone": 777494047
+      "phone": "777494047"
     },
     {
       "id": 3,
       "firstname": "Khadija",
       "lastname": "Faye",
-      "phone": 777494049,
+      "phone": "777494049",
       "accounts": [
         {
           "id": 5,
@@ -41,13 +41,31 @@
       "id": 4,
       "firstname": "Aissatou",
       "lastname": "Gningue",
-      "phone": 777494040
+      "phone": "777494040"
     },
     {
       "id": 5,
       "firstname": "Mouhamed",
       "lastname": "Diop",
-      "phone": 777494041
+      "phone": "777494041"
+    },
+    {
+      "id": 111,
+      "firstname": "Fatou",
+      "lastname": "LO",
+      "phone": "+221772528206"
+    },
+    {
+      "id": "35",
+      "firstname": "Youssoupha",
+      "lastname": "Niang",
+      "phone": "778955105"
+    },
+    {
+      "id": "56",
+      "firstname": "Babacar",
+      "lastname": "Lo",
+      "phone": "+221777494045"
     }
   ],
   "accounts": [
@@ -74,16 +92,6 @@
       }
     },
     {
-      "id": 3,
-      "accountNum": 235690,
-      "balance": 22500
-    },
-    {
-      "id": 4,
-      "accountNum": 235670,
-      "balance": 212500
-    },
-    {
       "id": 5,
       "accountNum": 235780,
       "balance": 212500,
@@ -95,9 +103,15 @@
       }
     },
     {
-      "id": 6,
-      "accountNum": 239690,
-      "balance": 922500
+      "id": "23",
+      "accountNum": "1222",
+      "balance": "54560",
+      "customer": {
+        "id": 2,
+        "firstname": "Moustapha",
+        "lastname": "Gaye",
+        "phone": "777494047"
+      }
     }
   ],
   "comments": [
