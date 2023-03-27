@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from "react";
-import {useNavigate, useParams} from "react-router-dom";
-import axios from 'axios';
+import { useParams} from "react-router-dom";
 import Shared from "./Shared";
+import accountService from "../services/AccountService";
 
 function Deposit(){
 
     const [amount, setAmount] = useState(0);
-    const [balance,setBalance]=useState(0)
+    const [balance,setBalance]=useState(0);
+
     function handleAmountChange(event) {
         const newValue = parseInt(event.target.value);
         if (!isNaN(newValue) && newValue >= 0) {
@@ -14,27 +15,24 @@ function Deposit(){
         }
     }
 
-    const url = 'http://localhost:3004/accounts';
     const {accountId}=useParams()
-    const accountUrl=url +'/'+ accountId;
 
     const [account,setAccount]=useState(null);
     useEffect(()=>{
-        axios.get(accountUrl).
+        accountService.getOneAccount(accountId).
             then(response=>{
                 setAccount(response.data)
                 setBalance(response.data.balance)
             console.log(response.data.balance)
         })
-    },[url])
+    },[])
 
     const handleSubmit = (e) => {
         e.preventDefault();
         alert(amount+balance)
-        axios.put(accountUrl,{balance:amount +balance})
-        //handleDeposit(amount);
-        setAmount('');
+        accountService.handleTransaction(accountId,balance,amount,"deposit")
     };
+
     return (
         <>
             <Shared />

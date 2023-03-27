@@ -1,6 +1,5 @@
 import axios from 'axios';
 const url = 'http://localhost:3004/customers';
-const accountUrl = 'http://localhost:3004/accounts';
 
 class CustomerService{
 
@@ -12,8 +11,9 @@ class CustomerService{
         return axios.post(url,newCustomer);
     }
 
-    addAccount(newAccount){
-        return axios.post(accountUrl,newAccount)
+
+    getACustomer(id){
+      return  axios.get(url + '/' + id);
     }
 }
 

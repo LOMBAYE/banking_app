@@ -1,68 +1,25 @@
 import React, { useEffect, useState } from "react";
-import HelloWorld from "../components/HelloWorld";
-import axios from 'axios';
-import {Link, useNavigate, useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import Shared from "../components/Shared";
-import TransactionModal from "../components/TransactionModal";
+import customerService from "../services/CustomerService";
 
-// type CustomProps = {
-//     name: string;
-//     age: number;
-// };
 
 
 function Details() {
     const { id } = useParams()
-    const url = 'http://localhost:3004/customers';
     const [customer, setCustomer] = useState(null)
     const [accountsOfCustomer,setAccountsOfCustomer]=useState([])
 
     useEffect(() => {
-        axios.get(url +'/' + id).
+        customerService.getACustomer(id).
         then(response => {
             setCustomer(response.data)
-            console.log(response.data)
-        })
-    }, [url])
-
-    useEffect(() => {
-        axios.get(url +'/' + id).
-        then(response => {
             setAccountsOfCustomer(response.data.accounts)
-            //console.log(response.data.accounts)
+            //console.log(response.data)
         })
-    }, [url])
+    }, [])
 
-    //Deposit or withdraw
-    const [showModal, setShowModal] = useState(false);
-    const [transactionType, setTransactionType] = useState("");
 
-    const handleDeposit = () => {
-        setTransactionType("deposit");
-        setShowModal(true);
-    };
-
-    const handleWithdrawal = () => {
-        setTransactionType("withdraw");
-        setShowModal(true);
-    };
-
-    const handleCloseModal = () => {
-        setShowModal(false);
-        setTransactionType("");
-    };
-
-    const handleTransactionSubmit = (amount) => {
-        if (transactionType === "deposit") {
-            // handle deposit logic
-            alert("deposit")
-        } else if (transactionType === "withdraw") {
-            // handle withdrawal logic
-            alert("submitted")
-        }
-        handleCloseModal();
-    };
-//
     const navigate = useNavigate()
 
 
@@ -102,13 +59,7 @@ function Details() {
             </>
         )
     }
-    return ( <
-        div >
-        <
-        HelloWorld / >
-        <
-        /div>
-    )
+
 
 }
 export default Details;

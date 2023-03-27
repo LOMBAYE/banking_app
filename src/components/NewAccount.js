@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
-import customerService from "../services/CustomerService";
 import { useNavigate, useParams } from "react-router-dom";
 import Shared from "./Shared";
-import axios from 'axios';
+import accountService from "../services/AccountService";
+import customerService from "../services/CustomerService";
 
 function NewAccount() {
 
     const { customerId } = useParams();
-    const url = 'http://localhost:3004/customers';
-    //console.log(customerId);
 
     const [customer,setCustomer]=useState(null)
     const [id, setId] = useState(0);
@@ -16,11 +14,11 @@ function NewAccount() {
     const [balance, setBalance] = useState(0);
 
     useEffect(() => {
-        axios.get(url +'/' + customerId).
+        customerService.getACustomer(customerId).
         then(response => {
             setCustomer(response.data)
         })
-    }, [url])
+    }, [])
 
     function handleIdChange(event) {
         setId(event.target.value);
@@ -39,7 +37,7 @@ function NewAccount() {
         event.preventDefault();
         const data = { id, accountNum, balance,customer };
         console.log(data)
-        customerService.addAccount(data)
+        accountService.addAccount(data)
             .then((response) => {
                 if (response.ok) {
                     alert("Customer added successfully!");

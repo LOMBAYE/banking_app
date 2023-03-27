@@ -1,26 +1,25 @@
 import React, {useEffect, useState} from "react";
 import Shared from "./Shared";
 import {useParams} from "react-router-dom";
-import axios from 'axios';
+import accountService from "../services/AccountService";
 
 function Withdraw() {
 
     const [amount, setAmount] = useState(0);
-    const [balance,setBalance]=useState(0)
+    const [balance,setBalance]=useState(0);
 
-    const url = 'http://localhost:3004/accounts';
-    const {accountId}=useParams()
-    const accountUrl=url +'/'+ accountId;
+
+    const {accountId}=useParams();
 
     const [account,setAccount]=useState(null);
     useEffect(()=>{
-        axios.get(accountUrl).
+        accountService.getOneAccount(accountId).
         then(response=>{
             setAccount(response.data)
             setBalance(response.data.balance)
             console.log(response.data.balance)
         })
-    },[url])
+    },[])
     function handleAmountChange(event) {
         const newValue = parseInt(event.target.value);
         if (!isNaN(newValue) && newValue >= 0) {
@@ -35,10 +34,9 @@ function Withdraw() {
             alert("Insufficient funds");
             event.preventDefault();
         } else {
-            axios.put(accountUrl,{balance: balance - amount})
+            accountService.handleTransaction(accountId,balance,amount,"")
             alert(`You withdrew ${amount} FCFA`);
         }
-        //handleWithdraw(amount);
         setAmount(0);
     };
 

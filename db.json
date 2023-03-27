@@ -66,6 +66,18 @@
       "firstname": "Babacar",
       "lastname": "Lo",
       "phone": "+221777494045"
+    },
+    {
+      "id": "344",
+      "firstname": "Mor",
+      "lastname": "DIagne",
+      "phone": "7088888888888888"
+    },
+    {
+      "id": "1111",
+      "firstname": "Saye",
+      "lastname": "Badiane",
+      "phone": "+221772528206"
     }
   ],
   "accounts": [
@@ -97,6 +109,40 @@
         "firstname": "Moustapha",
         "lastname": "Gaye",
         "phone": "777494047"
+      }
+    },
+    {
+      "id": "33",
+      "accountNum": "12222",
+      "balance": "66666645",
+      "customer": {
+        "id": "344",
+        "firstname": "Mor",
+        "lastname": "DIagne",
+        "phone": "7088888888888888"
+      }
+    },
+    {
+      "id": "BHsHfhg",
+      "accountNum": 0,
+      "balance": 0,
+      "customer": {
+        "id": 1,
+        "firstname": "Mbaye",
+        "lastname": "Lo",
+        "phone": "777494045",
+        "accounts": [
+          {
+            "id": 1,
+            "accountNum": 235676,
+            "balance": 12500
+          },
+          {
+            "id": 2,
+            "accountNum": 235677,
+            "balance": 13500
+          }
+        ]
       }
     }
   ],
