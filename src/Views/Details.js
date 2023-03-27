@@ -29,7 +29,7 @@ function Details() {
         axios.get(url +'/' + id).
         then(response => {
             setAccountsOfCustomer(response.data.accounts)
-            console.log(response.data.accounts)
+            //console.log(response.data.accounts)
         })
     }, [url])
 
@@ -89,19 +89,9 @@ function Details() {
                                 <td> {account.accountNum}</td>
                                 <td>{account.balance} FCFA</td>
                                 <td className="text-center">
-                                    <button type="button" className="btn btn-primary" onClick = {
-                                        () => navigate('/accounts/' + account.id)
-                                    } >Withdraw</button>
-                                    <button type="button" className="btn btn-info m-2" onClick = {
-                                        () => navigate('/accounts/' + account.id)
-                                    }>Deposit</button>
+                                    <button type="button" className="btn btn-primary" onClick = {() => navigate('/withdraw/' + account.id)} >Withdraw</button>
+                                    <button type="button" className="btn btn-info m-2" onClick = {() => navigate('/deposit/' + account.id)}>Deposit</button>
                                 </td>
-                                <TransactionModal
-                                    isOpen={showModal}
-                                    onClose={handleCloseModal}
-                                    type={transactionType}
-                                    onSubmit={handleTransactionSubmit}
-                                />
                             </tr>
                         )}
                         </tbody>

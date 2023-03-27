@@ -70,26 +70,12 @@
   ],
   "accounts": [
     {
-      "id": 1,
-      "accountNum": 235676,
-      "balance": 12500,
-      "customer": {
-        "id": 1,
-        "firstname": "Mbaye",
-        "lastname": "Lo",
-        "phone": 777494045
-      }
+      "balance": 15500,
+      "id": 1
     },
     {
-      "id": 2,
-      "accountNum": 235677,
-      "balance": 13500,
-      "customer": {
-        "id": 1,
-        "firstname": "Mbaye",
-        "lastname": "Lo",
-        "phone": 777494045
-      }
+      "balance": 12500,
+      "id": 2
     },
     {
       "id": 5,

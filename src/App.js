@@ -12,6 +12,8 @@ import AddCustomer from "./components/AddCustomer";
 import NewAccount from "./components/NewAccount";
 import Shared from "./components/Shared";
 import BankAccount from "./components/BankAccount";
+import Deposit from "./components/Deposit";
+import Withdraw from "./components/Withdraw";
 
 function App() {
     return (
@@ -28,6 +30,8 @@ function App() {
                     <Route path="/addCustomer" element={<AddCustomer/>}></Route>
                     <Route path="details/:id" element={ <Details/>}></Route>
                     <Route path="/newAccount/:customerId" element={<NewAccount/>}></Route>
+                    <Route path="/deposit/:accountId" element={<Deposit/>}></Route>
+                    <Route path="/withdraw/:accountId" element={<Withdraw />}></Route>
                 </Routes>
             </BrowserRouter>
 
