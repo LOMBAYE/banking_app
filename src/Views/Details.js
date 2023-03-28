@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import {useNavigate, useParams} from "react-router-dom";
 import Shared from "../components/Shared";
 import customerService from "../services/CustomerService";
+import accountService from "../services/AccountService";
 
 
 
@@ -14,11 +15,17 @@ function Details() {
         customerService.getACustomer(id).
         then(response => {
             setCustomer(response.data)
-            setAccountsOfCustomer(response.data.accounts)
-            //console.log(response.data)
         })
     }, [])
 
+    useEffect(()=>{
+        accountService.getAllAccounts().then(
+            response=>{
+                setAccountsOfCustomer(response.data.filter(
+                    obj=>obj.customer.id===parseInt(id)
+                ))}
+        )
+        },[])
 
     const navigate = useNavigate()
 

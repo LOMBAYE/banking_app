@@ -29,7 +29,7 @@ function Deposit(){
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert(amount+balance)
+        //alert(amount+balance)
         accountService.handleTransaction(accountId,balance,amount,"deposit")
     };
 

@@ -31,11 +31,11 @@ function Withdraw() {
     const handleSubmit = (event) => {
         event.preventDefault();
         if (amount > balance) {
-            alert("Insufficient funds");
+            //alert("Insufficient funds");
             event.preventDefault();
         } else {
             accountService.handleTransaction(accountId,balance,amount,"")
-            alert(`You withdrew ${amount} FCFA`);
+           // alert(`You withdrew ${amount} FCFA`);
         }
         setAmount(0);
     };

@@ -31,23 +31,24 @@ function NewAccount() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        const data = { accountNum, balance,customer };
+        const data = { accountNum, balance};
         console.log(data)
-        accountService.addAccount(data)
+        accountService.addAccount(customer.id,data)
             .then((response) => {
                 if (response.ok) {
-                    alert("Customer added successfully!");
+                   // alert("Customer added successfully!");
                     setAccountNum(0);
                     setBalance(0);
                     setCustomer(null);
                 } else {
-                    alert("Error adding customer!");
+                    //alert("Error adding customer!");
                 }
             })
             .catch((error) => {
-                alert("Error adding customerrr!");
-                console.error(error);
+                //alert("Error adding customerrr!");
+              //  console.error(error);
             });
+        navigate('/details' + '/' + customer.id)
     }
 
     const navigate = useNavigate()

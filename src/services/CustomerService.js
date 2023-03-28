@@ -1,5 +1,5 @@
 import axios from 'axios';
-const url = 'http://localhost:8080/api/customers';
+const url = 'http://localhost:8083/api/customers';
 
 class CustomerService{
 
