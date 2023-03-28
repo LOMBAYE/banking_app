@@ -7,7 +7,7 @@ function Withdraw() {
 
     const [amount, setAmount] = useState(0);
     const [balance,setBalance]=useState(0);
-
+    const [bool,setBool]=useState(false)
 
     const {accountId}=useParams();
 
@@ -55,6 +55,7 @@ function Withdraw() {
                         onChange={handleAmountChange}
                         required
                     />
+                    <small className="text-danger "> Amount shall be less than actual balance</small>
                 </div>
                 <div className="d-flex justify-content-center ">
                     <button type="submit" className="btn btn-primary mt-3"> Withdraw </button>

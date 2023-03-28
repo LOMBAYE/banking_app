@@ -9,7 +9,6 @@ function NewAccount() {
     const { customerId } = useParams();
 
     const [customer,setCustomer]=useState(null)
-    const [id, setId] = useState(0);
     const [accountNum, setAccountNum] = useState(0);
     const [balance, setBalance] = useState(0);
 
@@ -20,9 +19,6 @@ function NewAccount() {
         })
     }, [])
 
-    function handleIdChange(event) {
-        setId(event.target.value);
-    }
 
     function handleAccountNumChange(event) {
         setAccountNum(event.target.value);
@@ -35,13 +31,12 @@ function NewAccount() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        const data = { id, accountNum, balance,customer };
+        const data = { accountNum, balance,customer };
         console.log(data)
         accountService.addAccount(data)
             .then((response) => {
                 if (response.ok) {
                     alert("Customer added successfully!");
-                    setId(0);
                     setAccountNum(0);
                     setBalance(0);
                     setCustomer(null);
@@ -50,7 +45,7 @@ function NewAccount() {
                 }
             })
             .catch((error) => {
-                alert("Error adding customer!");
+                alert("Error adding customerrr!");
                 console.error(error);
             });
     }
@@ -62,20 +57,9 @@ function NewAccount() {
             <h4 className="text-center mt-3"> New Account for </h4>
             <form onSubmit={handleSubmit} className="container mt-5">
                 <div className="form-group">
-                    <label htmlFor="id">ID:</label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        id="id"
-                        value={id}
-                        onChange={handleIdChange}
-                        required
-                    />
-                </div>
-                <div className="form-group">
                     <label htmlFor="accountNum">Account number:</label>
                     <input
-                        type="text"
+                        type="number"
                         className="form-control"
                         id="accountNum"
                         value={accountNum}
@@ -86,7 +70,7 @@ function NewAccount() {
                 <div className="form-group">
                     <label htmlFor="balance">Balance :</label>
                     <input
-                        type="text"
+                        type="number"
                         className="form-control"
                         id="balance"
                         value={balance}

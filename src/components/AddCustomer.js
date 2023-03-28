@@ -4,14 +4,10 @@ import {useNavigate} from "react-router-dom";
 import Shared from "./Shared";
 
 function AddCustomer() {
-    const [id, setId] = useState("");
     const [firstname, setFirstname] = useState("");
     const [lastname, setLastname] = useState("");
     const [phone, setPhone] = useState("");
 
-    function handleIdChange(event) {
-        setId(event.target.value);
-    }
 
     function handleFirstNameChange(event) {
         setFirstname(event.target.value);
@@ -27,13 +23,12 @@ function AddCustomer() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        const data = { id, firstname, lastname, phone };
+        const data = { firstname, lastname, phone };
         console.log(data)
         customerService.addACustomer(data)
             .then((response) => {
                 if (response.ok) {
                     alert("Customer added successfully!");
-                    setId("");
                     setFirstname("");
                     setLastname("");
                     setPhone("");
@@ -53,17 +48,6 @@ function AddCustomer() {
         <>
             <Shared />
         <form onSubmit={handleSubmit} className="container mt-5">
-            <div className="form-group">
-                <label htmlFor="id">ID:</label>
-                <input
-                    type="number"
-                    className="form-control"
-                    id="id"
-                    value={id}
-                    onChange={handleIdChange}
-                    required
-                />
-            </div>
             <div className="form-group">
                 <label htmlFor="firstname">First Name:</label>
                 <input

@@ -52,7 +52,7 @@ function Customers() {
         tbody > {
             listOfCustomers.map((customer, i) =>
                 <
-                tr >
+                tr  >
                 <
                 th scope = "row" > {++i } < /th> <
                 td > { customer.firstname } < /td> <

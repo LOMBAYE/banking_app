@@ -1,5 +1,5 @@
 import axios from 'axios';
-const url = 'http://localhost:3004/customers';
+const url = 'http://localhost:8080/api/customers';
 
 class CustomerService{
 
@@ -14,6 +14,9 @@ class CustomerService{
 
     getACustomer(id){
       return  axios.get(url + '/' + id);
+    }
+    updateCustomer(customerId,customer){
+        return axios.put(url + '/' +customerId,customer)
     }
 }
 
