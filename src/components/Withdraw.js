@@ -44,23 +44,29 @@ function Withdraw() {
            // alert(`You withdrew ${amount} FCFA`);
         }
         setAmount(0);
-        navigate('/withdraw/' +accountId)
+        window.location.reload();
     };
-    const  navigate=useNavigate();
+    const navigate=useNavigate();
+
     return (
         <>
             <Shared />
             <h4 className="text-center mt-3"> Account balance is {account?.balance} F </h4>
-            <form onSubmit={handleSubmit} className="container mt-5">
-                <div className="form-group">
-                    <label htmlFor="amount">Withdraw Amount :</label>
-                    <input type="number" className="form-control mt-3" id="amount" min="0" value={amount} onChange={handleAmountChange} required/>
-                    {inputError && <span className="text-danger mt-2">{inputError}</span>}
+            <div className="container">
+                <div className = "col d-flex justify-content-end mt-3">
+                    <button  type = "button" className = "btn btn-primary" onClick = {() => navigate('/deposit/' + accountId)}>Deposit money</button>
                 </div>
-                <div className="d-flex justify-content-center p-2 m-3">
-                    <button type="submit" className="btn btn-primary mt-3"> Withdraw </button>
-                </div>
-            </form>
+                <form onSubmit={handleSubmit} className="container mt-5">
+                    <div className="form-group">
+                        <label htmlFor="amount">Withdraw Amount :</label>
+                        <input type="number" className="form-control mt-3" id="amount" min="0" value={amount} onChange={handleAmountChange} required/>
+                        {inputError && <span className="text-danger mt-2">{inputError}</span>}
+                    </div>
+                    <div className="d-flex justify-content-center p-2 m-3">
+                        <button type="submit" className="btn btn-primary mt-3"> Withdraw </button>
+                    </div>
+                </form>
+            </div>
         </>
     );
 }

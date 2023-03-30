@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import accountService from "../services/AccountService";
 import customerService from "../services/CustomerService";
 import Shared from "./Shared";
@@ -49,26 +49,25 @@ function NewAccount() {
                 //alert("Error adding customerrr!");
               //  console.error(error);
             });
-        navigate('/details' + '/' + customer.id)
+        window.location.reload();
     }
 
-    const navigate = useNavigate()
     return (
         <>
             <Shared />
-            <h4 className="text-center mt-3"> New Account </h4>
+            <h4 className="text-center mt-3"> New Account for {customer?.firstname} </h4>
             <form onSubmit={handleSubmit} className="container mt-5">
                 <div className="form-group">
                     <label htmlFor="accountNum">Account number:</label>
-                    <input type="number" className="form-control" id="accountNum" value={accountNum} onChange={handleAccountNumChange} required/>
+                    <input type="number" className="form-control" id="accountNum" min="1" value={accountNum} onChange={handleAccountNumChange} required/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="balance">Balance :</label>
-                    <input type="number" className="form-control" id="balance" value={balance} onChange={handleBalanceChange} required/>
+                    <input type="number" className="form-control" id="balance" min="1" value={balance} onChange={handleBalanceChange} required/>
                 </div>
-                <button type="submit" className="btn btn-primary mt-3">
-                    Add Customer
-                </button>
+                <div className="d-flex justify-content-center p-2 m-3">
+                    <button type="submit" className="btn btn-primary mt-3">Add Customer </button>
+                </div>
             </form>
         </>
     );

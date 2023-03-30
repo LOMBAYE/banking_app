@@ -40,7 +40,7 @@ function AddCustomer() {
                 alert("Error adding customer!");
                 console.error(error);
             });
-        navigate('/addCustomer');
+        window.location.reload();
     }
 
     const navigate=useNavigate()
@@ -61,9 +61,11 @@ function AddCustomer() {
                 <label htmlFor="phone">Phone:</label>
                 <input type="text" className="form-control" id="phone" value={phone} onChange={handlePhoneChange} required/>
             </div>
-            <button type="submit" className="btn btn-primary mt-4 btn-group">
-                Submit
-            </button>
+            <div className="d-flex justify-content-center p-2 m-3">
+                <button type="submit" className="btn btn-primary mt-4 btn-group">
+                    Submit
+                </button>
+            </div>
         </form>
         </>
     );

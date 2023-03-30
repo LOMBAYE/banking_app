@@ -19,23 +19,6 @@
 .accueil{
     height: 450px;
 }
-#titre {
-    font-size: 4rem;
-    color: white;
-    font-family: "Helvetica Neue";
-    animation-name: glow;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-}
-
-@keyframes glow {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0.3;
-    }
-}
 
 #main{
     background-color: var(--secondary-color);
@@ -46,4 +29,41 @@ a {
 }
 .form-group label{
     color: #777;
+}
+
+
+#text-animation {
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    animation-name: text-anim;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes text-anim {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(-50px);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(-100px);
+        opacity: 1;
+    }
+}
+#navbarNav{
+    font-weight: bold;
+}
+
+.input{
+    height: 30px;
+    width: 100px;
+    font-size: 16px;
+    padding: 5px;
 }

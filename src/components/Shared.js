@@ -6,7 +6,7 @@ function Shared(){
         <>
             <Link to="/">
                 <div className="accueil">
-                    <h5 className="text-center larger " id="titre">Partner for small businesses </h5>
+                    <h5 className="text-center larger text-black " id="text-animation">Partner for small businesses </h5>
                 </div>
             </Link>
         </>

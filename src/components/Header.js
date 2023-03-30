@@ -18,14 +18,19 @@ function Header(){
                                 aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
-                        <div className="collapse navbar-collapse" id="navbarNav">
+                        <div className="collapse navbar-collapse" >
                             <ul className="navbar-nav">
                                 <li className="nav-item">
-                                    <a className="nav-link" href="/homepage">Home </a>
+                                    {keycloak.authenticated && (
+                                        <a className="nav-link " href="/addCustomer" id="navbarNav">Add a customer</a>
+                                    )}
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="/homepage" id="navbarNav">Home </a>
                                 </li>
                                 <li className="nav-item">
                                     {keycloak.authenticated && (
-                                        <a className="nav-link " href="/customers">Customers</a>
+                                        <a className="nav-link " href="/customers" id="navbarNav">Customers</a>
                                     )}
                                 </li>
                                 <div className="nav-item">
