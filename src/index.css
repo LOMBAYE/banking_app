@@ -39,9 +39,11 @@
 
 #main{
     background-color: var(--secondary-color);
-    height: 100vh;
 }
 
 a {
     text-decoration: none;
+}
+.form-group label{
+    color: #777;
 }

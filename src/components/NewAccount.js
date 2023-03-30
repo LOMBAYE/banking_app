@@ -60,25 +60,11 @@ function NewAccount() {
             <form onSubmit={handleSubmit} className="container mt-5">
                 <div className="form-group">
                     <label htmlFor="accountNum">Account number:</label>
-                    <input
-                        type="number"
-                        className="form-control"
-                        id="accountNum"
-                        value={accountNum}
-                        onChange={handleAccountNumChange}
-                        required
-                    />
+                    <input type="number" className="form-control" id="accountNum" value={accountNum} onChange={handleAccountNumChange} required/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="balance">Balance :</label>
-                    <input
-                        type="number"
-                        className="form-control"
-                        id="balance"
-                        value={balance}
-                        onChange={handleBalanceChange}
-                        required
-                    />
+                    <input type="number" className="form-control" id="balance" value={balance} onChange={handleBalanceChange} required/>
                 </div>
                 <button type="submit" className="btn btn-primary mt-3">
                     Add Customer

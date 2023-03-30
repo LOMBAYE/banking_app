@@ -40,50 +40,29 @@ function AddCustomer() {
                 alert("Error adding customer!");
                 console.error(error);
             });
-        navigate('/customers');
+        navigate('/addCustomer');
     }
 
     const navigate=useNavigate()
     return (
         <>
             <Shared />
-
+            <h3 className="text-center mt-3">Add a new customer</h3>
         <form onSubmit={handleSubmit} className="container mt-5">
-            <div className="form-group">
+            <div className="form-group mb-2">
                 <label htmlFor="firstname">First Name:</label>
-                <input
-                    type="text"
-                    className="form-control"
-                    id="firstname"
-                    value={firstname}
-                    onChange={handleFirstNameChange}
-                    required
-                />
+                <input type="text" className="form-control" id="firstname" value={firstname} onChange={handleFirstNameChange} required/>
             </div>
-            <div className="form-group">
+            <div className="form-group mb-2">
                 <label htmlFor="lastname">Last Name:</label>
-                <input
-                    type="text"
-                    className="form-control"
-                    id="lastname"
-                    value={lastname}
-                    onChange={handleLastNameChange}
-                    required
-                />
+                <input type="text" className="form-control" id="lastname" value={lastname} onChange={handleLastNameChange} required/>
             </div>
-            <div className="form-group">
+            <div className="form-group mb-2">
                 <label htmlFor="phone">Phone:</label>
-                <input
-                    type="text"
-                    className="form-control"
-                    id="phone"
-                    value={phone}
-                    onChange={handlePhoneChange}
-                    required
-                />
+                <input type="text" className="form-control" id="phone" value={phone} onChange={handlePhoneChange} required/>
             </div>
-            <button type="submit" className="btn btn-primary mt-4">
-                Add Customer
+            <button type="submit" className="btn btn-primary mt-4 btn-group">
+                Submit
             </button>
         </form>
         </>
