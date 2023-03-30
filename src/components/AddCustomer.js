@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import customerService from "../services/CustomerService";
 import {useNavigate} from "react-router-dom";
-import Shared from "./Shared";
 
 function AddCustomer() {
     const [firstname, setFirstname] = useState("");
@@ -46,7 +45,6 @@ function AddCustomer() {
     const navigate=useNavigate()
     return (
         <>
-            <Shared />
         <form onSubmit={handleSubmit} className="container mt-5">
             <div className="form-group">
                 <label htmlFor="firstname">First Name:</label>

@@ -1,7 +1,9 @@
 import React from "react";
-import {Link} from "react-router-dom";
 import Baobab_Logo from '../Baobab_Logo.png';
+import { useKeycloak } from "@react-keycloak/web";
 function Header(){
+    const { keycloak, initialized } = useKeycloak();
+
     return(
         <>
         <header className="appHeader">
@@ -22,11 +24,14 @@ function Header(){
                                     <a className="nav-link active" aria-current="page" href="/">Home</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="/customers">Customers</a>
+                                    {!!keycloak.authenticated && (
+                                        <a className="nav-link" href="/customers">Customers</a>
+                                    )}
                                 </li>
-                                <li className="nav-item">
-                                    <btn className="btn btn-outline-danger " href="#">Login</btn>
-                                </li>
+                                <div className="nav-item">
+                                    {!keycloak.authenticated && (<button className="btn btn-outline-danger"   onClick={() => keycloak.login()}>Login</button>)}
+                                    {!!keycloak.authenticated && ( <button className="btn btn-outline-danger"   onClick={() => keycloak.logout()}>Logout</button>)}
+                                </div>
                             </ul>
                         </div>
                     </div>

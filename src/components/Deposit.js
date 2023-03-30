@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
-import { useParams} from "react-router-dom";
-import Shared from "./Shared";
+import {useNavigate, useParams} from "react-router-dom";
 import accountService from "../services/AccountService";
 
 function Deposit(){
@@ -32,10 +31,9 @@ function Deposit(){
         //alert(amount+balance)
         accountService.handleTransaction(accountId,balance,amount,"deposit")
     };
-
+    const navigate=useNavigate()
     return (
         <>
-            <Shared />
             <h4 className="text-center mt-3"> Deposit to account  </h4>
             <form onSubmit={handleSubmit} className="container mt-5">
                 <div className="form-group">

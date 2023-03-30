@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import Shared from "./Shared";
 import accountService from "../services/AccountService";
 import customerService from "../services/CustomerService";
 
@@ -54,7 +53,6 @@ function NewAccount() {
     const navigate = useNavigate()
     return (
         <>
-            <Shared/>
             <h4 className="text-center mt-3"> New Account for </h4>
             <form onSubmit={handleSubmit} className="container mt-5">
                 <div className="form-group">

@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import Shared from "./Shared";
 import {useParams} from "react-router-dom";
 import accountService from "../services/AccountService";
 
@@ -42,7 +41,6 @@ function Withdraw() {
 
     return (
         <>
-            <Shared />
             <h4 className="text-center mt-3"> Withdraw from account  </h4>
             <form onSubmit={handleSubmit} className="container mt-5">
                 <div className="form-group">

@@ -4,14 +4,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import keycloak from "./Keycloak";
+import {BrowserRouter} from "react-router-dom";
+import {ReactKeycloakProvider} from "@react-keycloak/web";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render( <
-    React.StrictMode >
-    <
-    App / >
-    <
-    /React.StrictMode>
+root.render(
+    <ReactKeycloakProvider authClient={keycloak}>
+        <BrowserRouter>
+            <React.StrictMode >
+                <App />
+            </React.StrictMode>
+        </BrowserRouter>
+    </ReactKeycloakProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
