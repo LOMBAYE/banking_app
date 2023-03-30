@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import {useNavigate, useParams} from "react-router-dom";
 import customerService from "../services/CustomerService";
 import accountService from "../services/AccountService";
+import Shared from "../components/Shared";
 
 
 
@@ -32,6 +33,7 @@ function Details() {
     if (customer) {
         return (
             <>
+               <Shared />
             <h1 class="title text-center mt-3">Details of {customer.firstname} {customer.lastname} 's account</h1>
             <div className="container mt-5">
                 {accountsOfCustomer && (

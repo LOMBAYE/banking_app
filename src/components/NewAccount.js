@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import accountService from "../services/AccountService";
 import customerService from "../services/CustomerService";
+import Shared from "./Shared";
 
 function NewAccount() {
 
@@ -15,6 +16,7 @@ function NewAccount() {
         customerService.getACustomer(customerId).
         then(response => {
             setCustomer(response.data)
+            console.log(response.data)
         })
     }, [])
 
@@ -53,7 +55,8 @@ function NewAccount() {
     const navigate = useNavigate()
     return (
         <>
-            <h4 className="text-center mt-3"> New Account for </h4>
+            <Shared />
+            <h4 className="text-center mt-3"> New Account </h4>
             <form onSubmit={handleSubmit} className="container mt-5">
                 <div className="form-group">
                     <label htmlFor="accountNum">Account number:</label>

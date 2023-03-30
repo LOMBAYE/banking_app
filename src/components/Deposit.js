@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {useNavigate, useParams} from "react-router-dom";
 import accountService from "../services/AccountService";
+import Shared from "./Shared";
 
 function Deposit(){
 
@@ -34,6 +35,7 @@ function Deposit(){
     const navigate=useNavigate()
     return (
         <>
+            <Shared />
             <h4 className="text-center mt-3"> Deposit to account  </h4>
             <form onSubmit={handleSubmit} className="container mt-5">
                 <div className="form-group">

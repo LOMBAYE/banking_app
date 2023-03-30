@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import customerService from "../services/CustomerService";
+import Shared from "./Shared";
 
 function Customers() {
 
@@ -19,6 +20,7 @@ function Customers() {
     const navigate = useNavigate()
     return ( <
         >
+            <Shared />
 
         <
         div className = "container" >

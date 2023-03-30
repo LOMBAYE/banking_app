@@ -21,16 +21,13 @@ function Header(){
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav">
                                 <li className="nav-item">
-                                    <a className="nav-link active" aria-current="page" href="/">Home</a>
-                                </li>
-                                <li className="nav-item">
-                                    {!!keycloak.authenticated && (
-                                        <a className="nav-link" href="/customers">Customers</a>
+                                    {keycloak.authenticated && (
+                                        <a className="nav-link " href="/customers">Customers</a>
                                     )}
                                 </li>
                                 <div className="nav-item">
-                                    {!keycloak.authenticated && (<button className="btn btn-outline-danger"   onClick={() => keycloak.login()}>Login</button>)}
-                                    {!!keycloak.authenticated && ( <button className="btn btn-outline-danger"   onClick={() => keycloak.logout()}>Logout</button>)}
+                                    {!keycloak.authenticated && (<button className="btn btn-outline-danger"   onClick={() => keycloak.login()}>Login to app</button>)}
+                                    {keycloak.authenticated && ( <button className="btn btn-outline-danger"   onClick={() => keycloak.logout()}>Logout {keycloak.tokenParsed.preferred_username}</button>)}
                                 </div>
                             </ul>
                         </div>

@@ -4,16 +4,20 @@
 :root {
     --primary-color: #F0F8FF;
     --secondary-color:#E8E8E8;
-    --dark-cornflower-blue: hsla(214, 97%, 27%, 1);
 }
-.accueil {
+.accueil ,.homepage {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 450px;
     background-image: url('https://images.unsplash.com/photo-1584271369250-c2401da8d8e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fGJhbmtpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60');
     background-size: cover;
     background-repeat: no-repeat;
+}
+.homepage{
+    height: 85vh;
+}
+.accueil{
+    height: 450px;
 }
 #titre {
     font-size: 4rem;
