@@ -46,7 +46,7 @@ function Deposit(){
                 <form onSubmit={handleSubmit} className="container mt-5">
                     <div className="form-group">
                         <label htmlFor="amount">Amount :</label>
-                        <input type="number" className="form-control mt-3" id="amount" min="0" value={amount} onChange={handleAmountChange} required/>
+                        <input type="number" className="form-control  mt-3" id="amount" min="0" value={amount} onChange={handleAmountChange} required/>
                     </div>
                     <div className="d-flex justify-content-center p-2 m-3">
                         <button type="submit" className="btn btn-primary mt-3"> Deposit </button>

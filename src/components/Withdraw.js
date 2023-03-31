@@ -59,7 +59,7 @@ function Withdraw() {
                     <div className="form-group">
                         <label htmlFor="amount">Withdraw Amount :</label>
                         <input type="number" className="form-control mt-3" id="amount" min="0" value={amount} onChange={handleAmountChange} required/>
-                        {inputError && <span className="text-danger mt-2">{inputError}</span>}
+                        {inputError && <span className="text-danger mt-4">{inputError}</span>}
                     </div>
                     <div className="d-flex justify-content-center p-2 m-3">
                         <button type="submit" className="btn btn-primary mt-3"> Withdraw </button>
