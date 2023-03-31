@@ -48,25 +48,27 @@ function AddCustomer() {
         <>
             <Shared />
             <h3 className="text-center mt-3">Add a new customer</h3>
-        <form onSubmit={handleSubmit} className="container mt-5">
-            <div className="form-group mb-2">
-                <label htmlFor="firstname">First Name:</label>
-                <input type="text" className="form-control" id="firstname" value={firstname} onChange={handleFirstNameChange} required/>
-            </div>
-            <div className="form-group mb-2">
-                <label htmlFor="lastname">Last Name:</label>
-                <input type="text" className="form-control" id="lastname" value={lastname} onChange={handleLastNameChange} required/>
-            </div>
-            <div className="form-group mb-2">
-                <label htmlFor="phone">Phone:</label>
-                <input type="text" className="form-control" id="phone" value={phone} onChange={handlePhoneChange} required/>
-            </div>
-            <div className="d-flex justify-content-center p-2 m-3">
-                <button type="submit" className="btn btn-primary mt-4 btn-group">
-                    Submit
-                </button>
-            </div>
-        </form>
+         <div className="container" >
+             <form onSubmit={handleSubmit} className="container mt-3">
+                 <div className="form-group">
+                     <label htmlFor="firstname">First Name</label>
+                     <input type="text" className="form-control mt-3" id="firstname" placeholder="Enter firstname" value={firstname} onChange={handleFirstNameChange} required/>
+                 </div>
+                 <div className="form-group mt-2">
+                     <label htmlFor="lastname">Last Name</label>
+                     <input type="text" className="form-control mt-2" id="lastname" placeholder="Enter lastname" value={lastname} onChange={handleLastNameChange} required/>
+                 </div>
+                 <div className="form-group mt-2">
+                     <label htmlFor="phone">Phone</label>
+                     <input type="text" className="form-control mt-2" id="phone" placeholder="Enter phone number" value={phone} onChange={handlePhoneChange} required/>
+                 </div>
+                 <div className="d-flex justify-content-center">
+                     <button type="submit" className="btn btn-primary mt-4 btn-group">
+                         Submit
+                     </button>
+                 </div>
+             </form>
+         </div>
         </>
     );
 }

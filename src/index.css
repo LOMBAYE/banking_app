@@ -61,9 +61,13 @@ a {
     font-weight: bold;
 }
 
-.input{
-    height: 30px;
-    width: 100px;
-    font-size: 16px;
-    padding: 5px;
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.form-group input{
+    width: 100%;
+    padding: 10px;
 }

@@ -26,7 +26,7 @@ function Header(){
                                     )}
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="/homepage" id="navbarNav">Home </a>
+                                    <a className="nav-link" href="/" id="navbarNav">Home </a>
                                 </li>
                                 <li className="nav-item">
                                     {keycloak.authenticated && (

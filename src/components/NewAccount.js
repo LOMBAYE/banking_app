@@ -56,19 +56,21 @@ function NewAccount() {
         <>
             <Shared />
             <h4 className="text-center mt-3"> New Account for {customer?.firstname} </h4>
-            <form onSubmit={handleSubmit} className="container mt-5">
-                <div className="form-group">
-                    <label htmlFor="accountNum">Account number:</label>
-                    <input type="number" className="form-control" id="accountNum" min="1" value={accountNum} onChange={handleAccountNumChange} required/>
-                </div>
-                <div className="form-group">
-                    <label htmlFor="balance">Balance :</label>
-                    <input type="number" className="form-control" id="balance" min="1" value={balance} onChange={handleBalanceChange} required/>
-                </div>
-                <div className="d-flex justify-content-center p-2 m-3">
-                    <button type="submit" className="btn btn-primary mt-3">Add Customer </button>
-                </div>
-            </form>
+            <div className="container" >
+                <form onSubmit={handleSubmit} className="container mt-5">
+                    <div className="form-group">
+                        <label htmlFor="accountNum">Account number</label>
+                        <input type="number" className="form-control mt-3 " id="accountNum" min="1" value={accountNum} onChange={handleAccountNumChange} required/>
+                    </div>
+                    <div className="form-group mt-3 ">
+                        <label htmlFor="balance">Balance </label>
+                        <input type="number" className="form-control mt-3" id="balance" min="1"  value={balance} onChange={handleBalanceChange} required/>
+                    </div>
+                    <div className="d-flex justify-content-center p-2 ">
+                        <button type="submit" className="btn btn-primary mt-3">Add Account </button>
+                    </div>
+                </form>
+            </div>
         </>
     );
 }

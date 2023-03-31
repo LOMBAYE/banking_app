@@ -13,8 +13,7 @@ function Withdraw() {
 
     const [account,setAccount]=useState(null);
     useEffect(()=>{
-        accountService.getOneAccount(accountId).
-        then(response=>{
+        accountService.getOneAccount(accountId).then(response=>{
             setAccount(response.data)
             setBalance(response.data.balance)
             console.log(response.data.balance)
@@ -52,7 +51,7 @@ function Withdraw() {
         <>
             <Shared />
             <h4 className="text-center mt-3"> Account balance is {account?.balance} F </h4>
-            <div className="container">
+            <div className="container" >
                 <div className = "col d-flex justify-content-end mt-3">
                     <button  type = "button" className = "btn btn-primary" onClick = {() => navigate('/deposit/' + accountId)}>Deposit money</button>
                 </div>
